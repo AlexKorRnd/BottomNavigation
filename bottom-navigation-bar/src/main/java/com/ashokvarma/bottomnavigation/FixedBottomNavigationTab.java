@@ -41,7 +41,7 @@ class FixedBottomNavigationTab extends BottomNavigationTab {
 
     @Override
     void init() {
-        paddingTopActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_active);
+        paddingTopActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_inactive);
         paddingTopInActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_inactive);
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
