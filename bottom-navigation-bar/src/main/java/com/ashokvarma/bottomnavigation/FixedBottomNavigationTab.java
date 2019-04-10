@@ -20,8 +20,6 @@ import android.widget.TextView;
  */
 class FixedBottomNavigationTab extends BottomNavigationTab {
 
-    float labelScale;
-
     public FixedBottomNavigationTab(Context context) {
         super(context);
     }
@@ -41,7 +39,7 @@ class FixedBottomNavigationTab extends BottomNavigationTab {
 
     @Override
     void init() {
-        paddingTopActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_active);
+        paddingTopActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_inactive);
         paddingTopInActive = (int) getResources().getDimension(R.dimen.fixed_height_top_padding_inactive);
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
@@ -52,21 +50,17 @@ class FixedBottomNavigationTab extends BottomNavigationTab {
         iconContainerView = (FrameLayout) view.findViewById(R.id.fixed_bottom_navigation_icon_container);
         badgeView = (BadgeTextView) view.findViewById(R.id.fixed_bottom_navigation_badge);
 
-        labelScale = getResources().getDimension(R.dimen.fixed_label_inactive) / getResources().getDimension(R.dimen.fixed_label_active);
-
         super.init();
     }
 
     @Override
     public void select(boolean setActiveColor, int animationDuration) {
-        labelView.animate().scaleX(1).scaleY(1).setDuration(animationDuration).start();
 //        labelView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.fixed_label_active));
         super.select(setActiveColor, animationDuration);
     }
 
     @Override
     public void unSelect(boolean setActiveColor, int animationDuration) {
-        labelView.animate().scaleX(labelScale).scaleY(labelScale).setDuration(animationDuration).start();
 //        labelView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.fixed_label_inactive));
         super.unSelect(setActiveColor, animationDuration);
     }

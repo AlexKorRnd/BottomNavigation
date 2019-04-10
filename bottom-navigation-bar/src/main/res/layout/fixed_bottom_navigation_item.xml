@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/fixed_height_bottom_padding"
     android:paddingLeft="@dimen/fixed_width_padding"
     android:paddingRight="@dimen/fixed_width_padding"
-    android:paddingTop="@dimen/fixed_height_top_padding_inactive">
+    android:paddingTop="4dp">
 
     <FrameLayout
         android:id="@+id/fixed_bottom_navigation_icon_container"
@@ -45,6 +45,7 @@
         android:lines="1"
         android:scaleX="@dimen/fixed_label_active_to_inactive_ratio"
         android:scaleY="@dimen/fixed_label_active_to_inactive_ratio"
-        android:textSize="@dimen/fixed_label_active" />
+        android:textSize="12sp"
+        />
 
 </FrameLayout>
