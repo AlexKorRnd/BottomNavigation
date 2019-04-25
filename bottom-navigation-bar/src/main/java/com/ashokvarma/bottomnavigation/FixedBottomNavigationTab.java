@@ -55,25 +55,41 @@ class FixedBottomNavigationTab extends BottomNavigationTab {
 
     @Override
     public void select(boolean setActiveColor, int animationDuration) {
-//        labelView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.fixed_label_active));
-        super.select(setActiveColor, animationDuration);
+        isActive = true;
+
+        iconView.setSelected(true);
+        if (setActiveColor) {
+            labelView.setTextColor(mActiveColor);
+        } else {
+            labelView.setTextColor(mBackgroundColor);
+        }
+
+        if (badgeItem != null) {
+            badgeItem.select();
+        }
     }
 
     @Override
     public void unSelect(boolean setActiveColor, int animationDuration) {
-//        labelView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.fixed_label_inactive));
-        super.unSelect(setActiveColor, animationDuration);
+        isActive = false;
+
+        labelView.setTextColor(mInActiveColor);
+        iconView.setSelected(false);
+
+        if (badgeItem != null) {
+            badgeItem.unSelect();
+        }
     }
 
     @Override
     protected void setNoTitleIconContainerParams(FrameLayout.LayoutParams layoutParams) {
-        layoutParams.height = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_container_height);
-        layoutParams.width = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_container_width);
+       /* layoutParams.height = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_container_height);
+        layoutParams.width = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_container_width);*/
     }
 
     @Override
     protected void setNoTitleIconParams(LayoutParams layoutParams) {
-        layoutParams.height = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_height);
-        layoutParams.width = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_width);
+        /*layoutParams.height = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_height);
+        layoutParams.width = getContext().getResources().getDimensionPixelSize(R.dimen.fixed_no_title_icon_width);*/
     }
 }

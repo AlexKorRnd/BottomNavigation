@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.annotation.CallSuper;
+import android.support.annotation.StyleRes;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -108,6 +109,14 @@ abstract class BottomNavigationTab extends FrameLayout {
     public void setLabel(String label) {
         mLabel = label;
         labelView.setText(label);
+    }
+
+    public void setLabelTextAppearance(@StyleRes int textAppearance) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            labelView.setTextAppearance(getContext(), textAppearance);
+        } else {
+            labelView.setTextAppearance(textAppearance);
+        }
     }
 
     public void setActiveColor(int activeColor) {

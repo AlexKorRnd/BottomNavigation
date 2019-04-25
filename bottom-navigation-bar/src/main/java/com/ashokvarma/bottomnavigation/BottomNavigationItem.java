@@ -40,6 +40,8 @@ public class BottomNavigationItem {
     private String mInActiveColorCode;
     private int mInActiveColor;
 
+    private int labelTextAppearance;
+
     private BadgeItem mBadgeItem;
 
     /**
@@ -256,6 +258,14 @@ public class BottomNavigationItem {
         } else {
             return Utils.NO_COLOR;
         }
+    }
+
+    public int getLabelTextAppearance() {
+        return labelTextAppearance;
+    }
+
+    public void setLabelTextAppearance(int labelTextAppearance) {
+        this.labelTextAppearance = labelTextAppearance;
     }
 
     /**
