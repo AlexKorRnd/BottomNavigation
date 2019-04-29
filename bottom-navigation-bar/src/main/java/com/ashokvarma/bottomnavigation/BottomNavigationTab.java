@@ -246,14 +246,14 @@ abstract class BottomNavigationTab extends FrameLayout {
         if (isNoTitleMode) {
             labelView.setVisibility(GONE);
 
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iconContainerView.getLayoutParams();
-            layoutParams.gravity = Gravity.CENTER;
-            setNoTitleIconContainerParams(layoutParams);
-            iconContainerView.setLayoutParams(layoutParams);
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iconContainerView.getLayoutParams();
+                layoutParams.gravity = Gravity.CENTER;
+                setNoTitleIconContainerParams(layoutParams);
+                iconContainerView.setLayoutParams(layoutParams);
 
-            FrameLayout.LayoutParams iconLayoutParams = (FrameLayout.LayoutParams) iconView.getLayoutParams();
-            setNoTitleIconParams(iconLayoutParams);
-            iconView.setLayoutParams(iconLayoutParams);
+                FrameLayout.LayoutParams iconLayoutParams = (FrameLayout.LayoutParams) iconView.getLayoutParams();
+                setNoTitleIconParams(iconLayoutParams);
+                iconView.setLayoutParams(iconLayoutParams);
         }
     }
 

@@ -7,6 +7,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
@@ -164,6 +165,36 @@ public class TextBadgeItem extends BadgeItem<TextBadgeItem> {
         this.mBorderWidthInPixels = borderWidthInPixels;
         refreshDrawable();
         return this;
+    }
+
+    /**
+    * if @param -1 then no setting
+    * */
+    public void setMargin(int left, int top, int right, int down) {
+        if (isWeakReferenceValid()) {
+            TextView textView = getTextView().get();
+            final ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) textView.getLayoutParams();
+            if (left >= 0) {
+                params.leftMargin = left;
+            }
+            if (top >= 0) {
+                params.topMargin = top;
+            }
+            if (right >= 0) {
+                params.rightMargin = right;
+            }
+            if (down >= 0) {
+                params.bottomMargin = down;
+            }
+            textView.setLayoutParams(params);
+        }
+    }
+
+    public void setTextSize(int textSize) {
+        if (isWeakReferenceValid()) {
+            TextView textView = getTextView().get();
+            textView.setTextSize(textSize);
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////
