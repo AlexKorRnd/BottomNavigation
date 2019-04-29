@@ -3,6 +3,7 @@ package com.ashokvarma.bottomnavigation;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -194,6 +195,17 @@ public class TextBadgeItem extends BadgeItem<TextBadgeItem> {
         if (isWeakReferenceValid()) {
             TextView textView = getTextView().get();
             textView.setTextSize(textSize);
+        }
+    }
+
+    public void setTextAppearance(int resId) {
+        if (isWeakReferenceValid()) {
+            TextView textView = getTextView().get();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                textView.setTextAppearance(resId);
+            } else {
+                textView.setTextAppearance(textView.getContext(), resId);
+            }
         }
     }
 
