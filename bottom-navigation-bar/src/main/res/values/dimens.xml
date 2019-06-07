@@ -14,7 +14,7 @@
     </dimen><!-- 8(Top Padding) - 12/2(extra padding due to badges) = 2 -->
     <dimen name="fixed_height_top_padding_active">0dp
     </dimen><!-- 6(Top Padding) - 12/2(extra padding due to badges) = 0 -->
-    <dimen name="fixed_height_bottom_padding">9dp</dimen>
+    <dimen name="fixed_height_bottom_padding">6dp</dimen>
 
     <dimen name="fixed_label_active">13sp</dimen>
     <dimen name="fixed_label_inactive">12sp</dimen>
